@@ -1,3 +1,4 @@
+const dotenv = require('dotenv');
 const express = require('express');
 const morgan = require('morgan');
 const { sequelize } = require('./models');
@@ -8,6 +9,8 @@ const logRouter = require('./routes/log');
 const challengeRouter = require('./routes/challenge');
 const commentRouter = require('./routes/comment');
 const badgeRouter = require('./routes/badge');
+
+dotenv.config();
 
 const app = express();
 app.set('port', process.env.PORT || 5000);

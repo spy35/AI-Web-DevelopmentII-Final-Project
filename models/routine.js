@@ -5,21 +5,21 @@ module.exports = class Routine extends Sequelize.Model {
         return super.init({
             title: {
                 type: Sequelize.STRING(100),
-                allowNull: false,
+                allowNull: false, //루틴 제목 (필수 입력)
             },
             category: {
                 type: Sequelize.STRING(50),
                 allowNull: false,
-                defaultValue: '건강',
+                defaultValue: '건강', //루틴 카테고리 (기본값: 건강)
             },
             targetDays: {
                 type: Sequelize.STRING(50),
-                allowNull: false,
+                allowNull: false, //루틴 목표 요일 (필수 입력)
             },
             isArchived: {
                 type: Sequelize.BOOLEAN,
                 allowNull: false,
-                defaultValue: false,
+                defaultValue: false, //루틴 보관 여부 (기본값: false)
             },
         }, {
             sequelize,
